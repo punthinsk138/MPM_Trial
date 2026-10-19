@@ -1,0 +1,15 @@
+2025.11.18
+1. Add a stress smoothing processing module based on grid mapping, which is activated by the keyword 'smoo'.
+2. Add a module for handling fixed or symmetric boundaries in SGMPM, and activate the SGMPM solver by entering the keyword 'sgmp'. 
+   For problems with free boundaries, it is sufficient to extend the background mesh such that the auxiliary mesh covers the discrete domain of material points.
+   However, when symmetric or fixed boundaries are present, the background mesh must be extended outward by one layer at the corresponding boundary. 
+   For plane strain problems, two symmetric boundary conditions are applied in the out-of-plane direction, where mesh extension is not required.
+3. Add the total Lagrangian material point method solving module, activated by entering the keyword 'TLmp'. Currently, 'TLmp' can be used alone or in combination with 'sgmp', and cannot be used in combination with 'gimp' or 'bimp'.
+4. Add a module to update particle volume using deformation gradient tensor, activated by entering the keyword 'UVFp'.
+5. Add NeoHookean hyperelastic constitutive module, activated by keyword  'neoh' , which will also activate the module that updates particle volume using deformation gradient tensor.
+6. Add an external quasi-static loading module,  activated by entering the keyword 'QuLo' and quasi-static loading time.
+7. Add the external damping factor module required for quasi-static problems, enter the keyword 'Damp' and damping factor to activate this function.
+8. Add the function of updating the time step DT.
+2026.9.4
+1.Add a simplified DP constitutive model for simulating undrained clay materials
+2.Eliminate path truncation bugs caused by excessively long input file path names
